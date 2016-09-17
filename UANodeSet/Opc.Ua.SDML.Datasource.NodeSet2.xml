@@ -1,0 +1,81 @@
+<UANodeSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uax="http://opcfoundation.org/UA/2008/02/Types.xsd" xmlns="http://opcfoundation.org/UA/2011/03/UANodeSet.xsd" xmlns:s1="http://yourorganisation.org/SDML_Datasource/Types.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <NamespaceUris>
+        <Uri>http://yourorganisation.org/SDML_Datasource/</Uri>
+    </NamespaceUris>
+    <Aliases>
+        <Alias Alias="Boolean">i=1</Alias>
+        <Alias Alias="String">i=12</Alias>
+        <Alias Alias="NodeId">i=17</Alias>
+        <Alias Alias="HasModellingRule">i=37</Alias>
+        <Alias Alias="HasTypeDefinition">i=40</Alias>
+        <Alias Alias="HasSubtype">i=45</Alias>
+        <Alias Alias="HasComponent">i=47</Alias>
+    </Aliases>
+    <Extensions>
+        <Extension>
+            <ModelInfo Tool="UaModeler" Hash="yjNsa74QBiSi+UnRvytsQw==" Version="1.4.3"/>
+        </Extension>
+    </Extensions>
+    <UAObjectType IsAbstract="true" NodeId="ns=1;i=1002" BrowseName="1:AbstractDatasourceType">
+        <DisplayName Locale="en">AbstractDatasourceType</DisplayName>
+        <Description Locale="en">AbstractDatasourceType</Description>
+        <References>
+            <Reference ReferenceType="HasSubtype" IsForward="false">i=58</Reference>
+        </References>
+    </UAObjectType>
+    <UAObjectType NodeId="ns=1;i=1003" BrowseName="1:I2CDatasourceType">
+        <DisplayName Locale="en">I2CDatasourceType</DisplayName>
+        <Description Locale="en">I2CDatasourceType</Description>
+        <References>
+            <Reference ReferenceType="HasSubtype" IsForward="false">ns=1;i=1002</Reference>
+        </References>
+    </UAObjectType>
+    <UAObjectType NodeId="ns=1;i=1004" BrowseName="1:OPCUADatasourceType">
+        <DisplayName Locale="en">OPCUADatasourceType</DisplayName>
+        <Description Locale="en">OPCUADatasourceType</Description>
+        <References>
+            <Reference ReferenceType="HasComponent">ns=1;i=6001</Reference>
+            <Reference ReferenceType="HasSubtype" IsForward="false">ns=1;i=1002</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=6002</Reference>
+            <Reference ReferenceType="HasComponent">ns=1;i=6003</Reference>
+        </References>
+    </UAObjectType>
+    <UAVariable DataType="Boolean" ParentNodeId="ns=1;i=1004" NodeId="ns=1;i=6001" BrowseName="1:IsRemote" UserAccessLevel="3" AccessLevel="3">
+        <DisplayName>IsRemote</DisplayName>
+        <Description>IsRemote</Description>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1004</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+        </References>
+        <Value>
+            <uax:Boolean>false</uax:Boolean>
+        </Value>
+    </UAVariable>
+    <UAVariable DataType="String" ParentNodeId="ns=1;i=1004" NodeId="ns=1;i=6002" BrowseName="1:RemoteURL" UserAccessLevel="3" AccessLevel="3">
+        <DisplayName>RemoteURL</DisplayName>
+        <Description>RemoteURL</Description>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1004</Reference>
+        </References>
+        <Value>
+            <uax:String></uax:String>
+        </Value>
+    </UAVariable>
+    <UAVariable DataType="NodeId" ParentNodeId="ns=1;i=1004" NodeId="ns=1;i=6003" BrowseName="1:SourceNode" UserAccessLevel="3" AccessLevel="3">
+        <DisplayName>SourceNode</DisplayName>
+        <Description>SourceNode</Description>
+        <References>
+            <Reference ReferenceType="HasTypeDefinition">i=63</Reference>
+            <Reference ReferenceType="HasModellingRule">i=78</Reference>
+            <Reference ReferenceType="HasComponent" IsForward="false">ns=1;i=1004</Reference>
+        </References>
+        <Value>
+            <uax:NodeId>
+                <uax:Identifier>i=0</uax:Identifier>
+            </uax:NodeId>
+        </Value>
+    </UAVariable>
+</UANodeSet>
